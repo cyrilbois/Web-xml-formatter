@@ -1,0 +1,165 @@
+h1 {
+	color: #4DAF52;
+	font-size: 3.1em;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 900;
+	text-align: center;
+	margin: 0;
+	width: 100%;
+	display: inline-block;
+	margin-bottom: 15px;
+}
+
+.editor-action {
+	float: right;
+	cursor: pointer;
+	padding: 7px 10px;
+	font-size: 13px;
+	font-weight: bold;
+	background-color: #E6E6E6;
+	color: #000;
+	border: 1px solid #bbbbbb;
+	cursor: pointer;
+	text-decoration: none;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	margin-top: 2px;
+	float: right;
+	margin-right: 8px;
+	margin-bottom: 8px;
+	margin-top: 13px;
+}
+
+.editor-action:hover {
+	background-color: #bbbbbb;
+	color: #fff;
+}
+
+.editor {
+	display: none;
+}
+
+.editor-error {
+	color:red;
+	padding:8px;
+	background-color:#F6CECE;
+	margin:10px 0px;
+}
+
+.editor-valid {
+	color:green;
+	padding:8px;
+	background-color:#D0F5A9;
+	margin:10px 0px;
+}
+
+
+.CodeMirror {
+	font-family:monospace;
+	height:350px;
+}
+
+.editor-container {
+	border: 2px solid #bbbbbb;
+	padding: 0px;
+	margin-top: 8px;
+}
+
+[data-a11y-dialog-native] .dialog-overlay {
+	display: none
+}
+
+dialog[open] {
+	display: block
+}
+
+.dialog[aria-hidden="true"] {
+	display: none
+}
+
+dialog::backdrop {
+	background-color: rgba(0, 0, 0, 0.66)
+}
+
+.dialog-content {
+	background-color: #fff;
+	z-index: 3;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	margin: 0
+}
+
+@keyframes fade-in {
+	from {
+		opacity: 0
+	}
+	to {
+		opacity: 1
+	}
+}
+
+@keyframes appear {
+	from {
+		transform: translate(-50%, -40%);
+		opacity: 0
+	}
+	to {
+		transform: translate(-50%, -50%);
+		opacity: 1
+	}
+}
+
+.dialog:not([aria-hidden='true'])>.dialog-overlay {
+	animation: fade-in 200ms 1 both
+}
+
+.dialog:not([aria-hidden='true'])>.dialog-content {
+	animation: appear 400ms 150ms 1 both
+}
+
+.dialog-content {
+	padding: 1em;
+	max-width: 90%;
+	width: 600px;
+	border-radius: 2px
+}
+
+.dialog-container {
+	padding: 20px
+}
+
+.dialog h1 {
+	margin: 0;
+	font-size: 2.25em;
+	font-family: 'ESPI Slab', sans-serif;
+	line-height: 1.1;
+	color: #424242
+}
+
+.dialog-close {
+	position: absolute;
+	top: .5em;
+	right: .5em;
+	border: 0;
+	padding: 0;
+	background-color: transparent;
+	font-weight: 700;
+	font-size: 1.25em;
+	width: 1.2em;
+	height: 1.2em;
+	text-align: center;
+	cursor: pointer;
+	transition: .15s
+}
+
+@media screen and (min-width: 700px) {
+	.dialog-close {
+		top: 1em;
+		right: 1em
+	}
+}

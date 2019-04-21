@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<title>XML Formatter</title>
+		<link href="./external/codemirror/codemirror.css" rel="stylesheet" />
+		<link href="./style.css" rel="stylesheet" />
+	</head>
+	<body>
+		<h1>XML Formatter</h1>
+		<input type="file" id="file-input" style="display:none;"  />
+		<div id="message" ></div>
+		<div class="span">
+			<input type="button" class="editor-action" value="Download" id="download-xml" />
+			<input type="button" class="editor-action" value="Copy to clipboard"  id="copy-xml"/>
+			<input type="button" class="editor-action" value="Minify" id="minify-xml" />
+			<input type="button" class="editor-action" value="Beautify" id="beautify-xml" />
+			<input type="button" class="editor-action" value="load XML from URL" id="load-xml" />
+			<input type="button" class="editor-action" value="Browse" id="browse-xml" />
+			<br/><br/><br/><div style="clear:both" class="editor-container">
+				<textarea id="editor-container-xml" class="editor"></textarea>
+			</div>
+		</div>
+		<div class="dialog" id="dialog-load-from-url">
+		  <div class="dialog-overlay" tabindex="-1" data-a11y-dialog-hide></div>
+		  <dialog class="dialog-content" role="alertdialog" aria-labelledby="dialogTitle">
+			<button class="dialog-close" data-a11y-dialog-hide aria-label="Close this dialog window">
+			  &times;
+			</button>
+			<h1 id="dialog-load-from-url-title">Load XML From URL</h1>
+			<div class="dialog-container">
+				<form>
+				  <label for="name">URL</label>
+				  <input type="text" name="url" id="url" value="" class="text" style="width:80%;" />
+				  <input type="submit" tabindex="-1" style="position:absolute; top:-1000px" />
+				</form>
+				<button type="button" class="action-button-editor right span" onclick="loadFromURL();">Load XML</button>
+			</div>
+		  </dialog>
+		</div>
+	</body>
+	<script src="./external/codemirror/codemirror.js"></script>
+	<script src="./external/codemirror/mode/xml/xml.js"></script>
+	<script src="./external/a11y-dialog/a11y-dialog.min.js"></script>
+	<script src="./main.js"></script>	
+</html>
